@@ -1,0 +1,17 @@
+﻿
+<h2>@ViewBag.pelnaLiga</h2>
+<link rel="stylesheet" href="~/Content/Przyciski.css" />
+<link rel="stylesheet" href="~/Content/styleHTH.css" />
+@using (Html.BeginForm("Kolejka", "Kolejka", new { liga = ViewBag.liga, liczbaMeczow=ViewBag.liczbaMeczow }))
+{
+    <div class="but">
+        <div class="but gosc">
+            <div>Kolejka:</div>
+            <div>@Html.DropDownList("WyborKolejka", null, new { id = "ddl1" })</div>
+        </div>
+        <div class="but przyc">
+            <input value="Prognoza" type="submit" class="button1" />
+        </div>
+    </div>
+}
+

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">@*To potrzebne do strzalek w menu*@
+    <link rel="stylesheet" href="~/Content/styleMenu.css" />@*Style do menu głównego*@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title — Prognozy piłkarskie</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:darkblue; min-width:400px" >
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand">Menu</a>
+            </div>
+            <div class="mynav_navbar">
+                <div class="mynav_dropdown">
+                    @Html.ActionLink("Strona główna", "Index", "Home")
+                </div>
+                <div class="mynav_dropdown">
+                    <button class="mynav_dropbtn">
+                        HeadToHead
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="mynav_dropdown-content">
+                        <a asp-area=""><b>Ligi:</b></a>
+                        @Html.ActionLink("Premier League", "Index", "HeadToHead", new { liga = "PL", pelnaLiga = "Premier League" }, null)
+                        @Html.ActionLink("La Liga", "Index", "HeadToHead", new { liga = "PD", pelnaLiga = "La Liga" }, null)
+                        @Html.ActionLink("Bundesliga", "Index", "HeadToHead", new { liga = "BL1", pelnaLiga = "Bundesliga" }, null)
+                        @Html.ActionLink("Serie A", "Index", "HeadToHead", new { liga = "SA", pelnaLiga = "Italian Serie A" }, null)
+                        @Html.ActionLink("League 1", "Index", "HeadToHead", new { liga = "FL1", pelnaLiga = "France League 1" }, null)
+                        @Html.ActionLink("Eredivise", "Index", "HeadToHead", new { liga = "DED", pelnaLiga = "Eredivise" }, null)
+                        @Html.ActionLink("Portugalska Primera Division", "Index", "HeadToHead", new { liga = "PPL", pelnaLiga = "Portuguese Primera Division " }, null)
+                        @Html.ActionLink("Championship", "Index", "HeadToHead", new { liga = "ELC", pelnaLiga = "Championship" }, null)
+
+                    </div>
+                </div>
+                <div class="mynav_dropdown">
+                    <button class="mynav_dropbtn">
+                        Kolejka
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="mynav_dropdown-content">
+                        <div class="mynav_dropdown-content">
+                            @Html.ActionLink("Premier League", "Index", "Kolejka", new { liga = "PL", pelnaLiga = "Premier League" }, null)
+                            @Html.ActionLink("La Liga", "Index", "Kolejka", new { liga = "PD", pelnaLiga = "La Liga" }, null)
+                            @Html.ActionLink("Bundesliga", "Index", "Kolejka", new { liga = "BL1", pelnaLiga = "Bundesliga" }, null)
+                            @Html.ActionLink("Serie A", "Index", "Kolejka", new { liga = "SA", pelnaLiga = "Italian Serie A" }, null)
+                            @Html.ActionLink("League 1", "Index", "Kolejka", new { liga = "FL1", pelnaLiga = "France League 1" }, null)
+                            @Html.ActionLink("Eredivise", "Index", "Kolejka", new { liga = "DED", pelnaLiga = "Eredivise" }, null)
+                            @Html.ActionLink("Portugalska Primera Division", "Index", "Kolejka", new { liga = "PPL", pelnaLiga = "Portuguese Primera Division " }, null)
+                            @Html.ActionLink("Championship", "Index", "Kolejka", new { liga = "ELC", pelnaLiga = "Championship" }, null)
+                        </div>
+                     </div>
+                </div>
+                <div class="mynav_dropdown">
+                    <button class="mynav_dropbtn">
+                        Info
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="mynav_dropdown-content">
+                        @Html.ActionLink("Dostępne ligi", "About", "Home")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content" style="min-width:400px;min-height:300px;position:relative;top:50px; flex-wrap:wrap;">
+        @RenderBody()
+        <hr />
+        <footer style="bottom:0px">
+            <p>&copy; @DateTime.Now.Year — Prognozy piłkarskie</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

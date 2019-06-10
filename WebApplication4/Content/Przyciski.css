@@ -1,0 +1,33 @@
+﻿.button1 {
+    border-top: 1px solid #6791ab;
+    background: #3193d4;
+    background: -webkit-gradient(linear, left top, left bottom, from(#00497a), to(#3193d4));
+    background: -webkit-linear-gradient(top, #00497a, #3193d4);
+    background: -moz-linear-gradient(top, #00497a, #3193d4);
+    background: -ms-linear-gradient(top, #00497a, #3193d4);
+    background: -o-linear-gradient(top, #00497a, #3193d4);
+    padding: 9.5px 23px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: #c7c7c7;
+    font-size: 16px;
+    font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+    .button1:hover {
+        border-top-color: #b5d3e6;
+        background: #b5d3e6;
+        color: #ccc;
+    }
+
+    .button1:active {
+        border-top-color: #7da8c4;
+        background: #7da8c4;
+    }

@@ -1,0 +1,76 @@
+﻿@model List<WebApplication4.Models.PrognozaMeczu>
+
+<h2>@ViewBag.pelnaLiga</h2>
+<h2>Kolejka @ViewBag.nrK - Prognozy</h2>
+<table width="50%" border="1">
+    <tr>
+        <th align="center" width="31%">
+            Gospodarz
+        </th>
+        <th align="center" width="31%">
+            Gosc
+        </th>
+        <th align="center" width="9%">
+            1
+        </th>
+        <th align="center" width="9%">
+            X
+        </th>
+        <th align="center" width="9%">
+            2
+        </th>
+        <th align="center" width="11%">
+            Prognoza
+        </th>
+        <th>
+            Dokładny wynik
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Gospodarz
+            </td>
+            <td>
+                @item.gosc
+            </td>
+            <td>
+                @item.OneXtwo()[0]%
+            </td>
+            <td>
+                @item.OneXtwo()[1]%
+            </td>
+            <td>
+                @item.OneXtwo()[2]%
+            </td>
+            <td align="center">
+                @{ int[] typ = item.OneXtwo();
+                    int max = Array.IndexOf(typ, typ.Max());
+                    string a;
+                    if (max == 0 && typ[max] >= 40)
+                    {
+                        a="1";
+                    }
+                    else if (max == 2 && typ[max] >= 40)
+                    {
+                       a= "2";
+                    }
+                    else
+                    {
+                       a= "X";
+                    }
+                }
+                @a
+            </td>
+            <td align="center">
+                @item.IndexOfMaxGospodarz() : @item.IndexOfMaxGosc()
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+
+

@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = ViewBag.pelnaliga;
+}
+<link rel="stylesheet" href="~/Content/Przyciski.css" />
+<link rel="stylesheet" href="~/Content/styleHTH.css" />
+<div style="width:400px;height:70px;display:table-cell;vertical-align:central">
+    <h2>Head to head - @ViewBag.Title</h2>
+</div>
+@using (Html.BeginForm("Prognoza", "HeadToHead", new { liga = ViewBag.liga, pelnaLiga = ViewBag.pelnaliga }))
+{
+    <div class="but">
+        <div class="but gosc">
+            <div>Gospodarz:</div>
+            <div>@Html.DropDownList("WyborHTH1", null, new { id = "ddl1" })</div>
+        </div>
+        <div class="but gosc">
+            <div>Gość:</div>
+            <div>@Html.DropDownList("WyborHTH2", null, new { id = "ddl2" })</div>
+        </div>
+        <div class="but przyc">
+            <input value="Prognoza" type="submit" class="button1" />
+        </div>
+    </div>
+}
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script>
+    $(document).ready(function () {
+        var pre1;
+        $("#ddl1").change(function () {
+            var a = $("#ddl1").get(0).selectedIndex;
+            $("#ddl2 option:eq(" + a + ")").hide();
+            $("#ddl2 option:eq(" + pre1 + ")").show();
+            pre1 = a;
+        })
+        var pre2;
+        $("#ddl2").change(function () {
+            var a = $("#ddl2").get(0).selectedIndex;
+            $("#ddl1 option:eq(" + a + ")").hide();
+            $("#ddl1 option:eq(" + pre2 + ")").show();
+            pre2 = a;
+        })
+    })
+</script>
+

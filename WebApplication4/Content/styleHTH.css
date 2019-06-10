@@ -1,0 +1,28 @@
+﻿.but {
+    display: flex;
+    flex-wrap:wrap;
+    max-width:400px;
+}
+    .but .przyc {
+        width: 400px;
+        height: 40px;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+    }
+    .but .gosc {
+        width: 400px;
+        height: 40px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+        .but .gosc div {
+            width: 200px;
+            height: 40px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    
+

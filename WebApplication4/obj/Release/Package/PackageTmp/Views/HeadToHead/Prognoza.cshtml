@@ -1,0 +1,29 @@
+﻿<div style="position:">
+<h2>Prognoza</h2>
+@{
+    ViewBag.Title = ViewBag.pelnaLiga;
+}
+<div>Najbardziej prawdopodobny wynik:</div>
+<div>@ViewBag.team1 @ViewBag.max1 : @ViewBag.max2 @ViewBag.team2</div>
+<div>Prawdopodobieństwo: @ViewBag.szansa%</div>
+<table width="30%">
+    <tr><td width="20%" align="center">Bramki:</td><td width="40%" align="center">@ViewBag.team1</td><td width="40%" align="center">@ViewBag.team2</td></tr>
+    <tr><td width="20%" align="center">0</td><td width="40%" align="center">@ViewBag.klub1[0]%</td><td width="40%" align="center">@ViewBag.klub2[0]%</td></tr>
+    <tr><td width="20%" align="center">1</td><td width="40%" align="center">@ViewBag.klub1[1]%</td><td width="40%" align="center">@ViewBag.klub2[1]%</td></tr>
+    <tr><td width="20%" align="center">2</td><td width="40%" align="center">@ViewBag.klub1[2]%</td><td width="40%" align="center">@ViewBag.klub2[2]%</td></tr>
+    <tr><td width="20%" align="center">3</td><td width="40%" align="center">@ViewBag.klub1[3]%</td><td width="40%" align="center">@ViewBag.klub2[3]%</td></tr>
+    <tr><td width="20%" align="center">4</td><td width="40%" align="center">@ViewBag.klub1[4]%</td><td width="40%" align="center">@ViewBag.klub2[4]%</td></tr>
+    <tr><td width="20%" align="center">5</td><td width="40%" align="center">@ViewBag.klub1[5]%</td><td width="40%" align="center">@ViewBag.klub2[5]%</td></tr>
+</table>
+<table width="30%">
+    <tr><td width="20%" align="center">@ViewBag.team1</td><td width="40%" align="center">Remis</td><td width="40%" align="center">@ViewBag.team2</td></tr>
+    <tr><td width="20%" align="center">@ViewBag.oxt[0]%</td><td width="40%" align="center">@ViewBag.oxt[1]%</td><td width="40%" align="center">@ViewBag.oxt[2]%</td></tr>
+</table>
+</div>
+
+    
+
+
+
+
+
